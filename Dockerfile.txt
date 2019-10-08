@@ -1,0 +1,6 @@
+FROM docker.io/centos
+SHELL [ "/bin/bash","-c" ]
+RUN adduser -M admin 
+RUN echo 'Pr!m3' | passwd admin --stdin
+RUN usermod -aG wheel admin
+CMD [ "tail -f /dev/null" ]
